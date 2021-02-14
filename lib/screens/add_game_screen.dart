@@ -45,6 +45,18 @@ class _AddGameScreenState extends State<AddGameScreen> {
               ),
             ),
             Row(children: [
+              Text("タイトル"),
+              Expanded(
+                child: TextField(
+                  autofocus: true,
+                  textAlign: TextAlign.center,
+                  onChanged: (newText) {
+                    title = newText;
+                  },
+                ),
+              ),
+            ]),
+            Row(children: [
               Text("メンバー1"),
               Expanded(
                 child: TextField(
@@ -146,7 +158,7 @@ class _AddGameScreenState extends State<AddGameScreen> {
               color: Colors.lightBlueAccent,
               onPressed: () {
                 Provider.of<GameData>(context, listen: false).addGame(Game(
-                    title: "タイトル",
+                    title: title,
                     member1: member1,
                     member2: member2,
                     member3: member3,
