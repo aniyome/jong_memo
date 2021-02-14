@@ -10,7 +10,7 @@ class GameScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.lightBlueAccent,
+          backgroundColor: Colors.green,
           child: Icon(Icons.add),
           onPressed: () {
             showModalBottomSheet(

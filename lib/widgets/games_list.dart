@@ -10,17 +10,6 @@ class GamesList extends StatelessWidget {
         return ListView.builder(
           itemBuilder: (context, index) {
             final game = gameData.games[index];
-            // return Container(
-            //   child: Column(
-            //     children: [
-            //       Text("${game.title}"),
-            //       Text("${game.member1}: ${game.memberScore1}"),
-            //       Text("${game.member2}: ${game.memberScore2}"),
-            //       Text("${game.member3}: ${game.memberScore3}"),
-            //       Text("${game.member4}: ${game.memberScore4}")
-            //     ],
-            //   ),
-            // );
             return Card(
               child: Padding(
                 padding: EdgeInsets.all(12),
@@ -33,6 +22,34 @@ class GamesList extends StatelessWidget {
                     Text("${game.member2}: ${game.memberScore2}"),
                     Text("${game.member3}: ${game.memberScore3}"),
                     Text("${game.member4}: ${game.memberScore4}"),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Expanded(
+                            child: RaisedButton(
+                              child: const Text('編集'),
+                              color: Colors.orange,
+                              textColor: Colors.white,
+                              onPressed: () {},
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Expanded(
+                            child: RaisedButton(
+                              child: const Text('削除'),
+                              color: Colors.redAccent,
+                              textColor: Colors.white,
+                              onPressed: () {},
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),

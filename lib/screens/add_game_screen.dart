@@ -37,11 +37,11 @@ class _AddGameScreenState extends State<AddGameScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Text(
-              'Add Game',
+              '対局登録',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 30.0,
-                color: Colors.lightBlueAccent,
+                color: Colors.black45,
               ),
             ),
             Row(children: [
@@ -148,27 +148,30 @@ class _AddGameScreenState extends State<AddGameScreen> {
                 ),
               ),
             ]),
-            FlatButton(
-              child: Text(
-                'Add',
-                style: TextStyle(
-                  color: Colors.white,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FlatButton(
+                child: Text(
+                  '登録',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
+                color: Colors.green,
+                onPressed: () {
+                  Provider.of<GameData>(context, listen: false).addGame(Game(
+                      title: title,
+                      member1: member1,
+                      member2: member2,
+                      member3: member3,
+                      member4: member4,
+                      memberScore1: 25000,
+                      memberScore2: 25000,
+                      memberScore3: 25000,
+                      memberScore4: 25000));
+                  Navigator.pop(context);
+                },
               ),
-              color: Colors.lightBlueAccent,
-              onPressed: () {
-                Provider.of<GameData>(context, listen: false).addGame(Game(
-                    title: title,
-                    member1: member1,
-                    member2: member2,
-                    member3: member3,
-                    member4: member4,
-                    memberScore1: 25000,
-                    memberScore2: 25000,
-                    memberScore3: 25000,
-                    memberScore4: 25000));
-                Navigator.pop(context);
-              },
             ),
           ],
         ),
