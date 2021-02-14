@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:jong_memo/models/game_data.dart';
+import 'package:jong_memo/screens/add_game_screen.dart';
 import 'package:jong_memo/widgets/games_list.dart';
 import 'package:provider/provider.dart';
 
@@ -8,6 +9,20 @@ class GameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.lightBlueAccent,
+          child: Icon(Icons.add),
+          onPressed: () {
+            showModalBottomSheet(
+                context: context,
+                isScrollControlled: true,
+                builder: (context) => SingleChildScrollView(
+                        child: Container(
+                      padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom),
+                      child: AddGameScreen(),
+                    )));
+          }),
       body: Column(
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
