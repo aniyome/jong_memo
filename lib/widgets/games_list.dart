@@ -10,15 +10,31 @@ class GamesList extends StatelessWidget {
         return ListView.builder(
           itemBuilder: (context, index) {
             final game = gameData.games[index];
-            return Container(
-              child: Column(
-                children: [
-                  Text("${game.title}"),
-                  Text("${game.member1}: ${game.memberScore1}"),
-                  Text("${game.member2}: ${game.memberScore2}"),
-                  Text("${game.member3}: ${game.memberScore3}"),
-                  Text("${game.member4}: ${game.memberScore4}")
-                ],
+            // return Container(
+            //   child: Column(
+            //     children: [
+            //       Text("${game.title}"),
+            //       Text("${game.member1}: ${game.memberScore1}"),
+            //       Text("${game.member2}: ${game.memberScore2}"),
+            //       Text("${game.member3}: ${game.memberScore3}"),
+            //       Text("${game.member4}: ${game.memberScore4}")
+            //     ],
+            //   ),
+            // );
+            return Card(
+              child: Padding(
+                padding: EdgeInsets.all(12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("${game.title}"),
+                    const SizedBox(height: 12),
+                    Text("${game.member1}: ${game.memberScore1}"),
+                    Text("${game.member2}: ${game.memberScore2}"),
+                    Text("${game.member3}: ${game.memberScore3}"),
+                    Text("${game.member4}: ${game.memberScore4}"),
+                  ],
+                ),
               ),
             );
           },

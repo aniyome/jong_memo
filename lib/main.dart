@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider<GameData>(
       create: (_) => GameData(),
       child: MaterialApp(
-        home: GameScreen(),
+        home: SafeArea(child: GameScreen()),
       ),
     );
   }
