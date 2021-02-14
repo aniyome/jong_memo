@@ -44,34 +44,98 @@ class _AddGameScreenState extends State<AddGameScreen> {
                 color: Colors.lightBlueAccent,
               ),
             ),
-            TextField(
-              autofocus: true,
-              textAlign: TextAlign.center,
-              onChanged: (newText) {
-                member1 = newText;
-              },
-            ),
-            TextField(
-              autofocus: true,
-              textAlign: TextAlign.center,
-              onChanged: (newText) {
-                member2 = newText;
-              },
-            ),
-            TextField(
-              autofocus: true,
-              textAlign: TextAlign.center,
-              onChanged: (newText) {
-                member3 = newText;
-              },
-            ),
-            TextField(
-              autofocus: true,
-              textAlign: TextAlign.center,
-              onChanged: (newText) {
-                member4 = newText;
-              },
-            ),
+            Row(children: [
+              Text("メンバー1"),
+              Expanded(
+                child: TextField(
+                  autofocus: true,
+                  textAlign: TextAlign.center,
+                  onChanged: (newText) {
+                    member1 = newText;
+                  },
+                ),
+              ),
+              Text("点数"),
+              Expanded(
+                child: TextField(
+                  autofocus: true,
+                  keyboardType: TextInputType.number,
+                  textAlign: TextAlign.center,
+                  onChanged: (newText) {
+                    memberScore1 = newText;
+                  },
+                ),
+              ),
+            ]),
+            Row(children: [
+              Text("メンバー2"),
+              Expanded(
+                child: TextField(
+                  autofocus: true,
+                  textAlign: TextAlign.center,
+                  onChanged: (newText) {
+                    member2 = newText;
+                  },
+                ),
+              ),
+              Text("点数"),
+              Expanded(
+                child: TextField(
+                  autofocus: true,
+                  keyboardType: TextInputType.number,
+                  textAlign: TextAlign.center,
+                  onChanged: (newText) {
+                    memberScore2 = newText;
+                  },
+                ),
+              ),
+            ]),
+            Row(children: [
+              Text("メンバー3"),
+              Expanded(
+                child: TextField(
+                  autofocus: true,
+                  textAlign: TextAlign.center,
+                  onChanged: (newText) {
+                    member3 = newText;
+                  },
+                ),
+              ),
+              Text("点数"),
+              Expanded(
+                child: TextField(
+                  autofocus: true,
+                  keyboardType: TextInputType.number,
+                  textAlign: TextAlign.center,
+                  onChanged: (newText) {
+                    memberScore3 = newText;
+                  },
+                ),
+              ),
+            ]),
+            Row(children: [
+              Text("メンバー4"),
+              Expanded(
+                child: TextField(
+                  autofocus: true,
+                  textAlign: TextAlign.center,
+                  onChanged: (newText) {
+                    member4 = newText;
+                  },
+                ),
+              ),
+              Text("点数"),
+              Expanded(
+                child: TextField(
+                  autofocus: true,
+                  keyboardType: TextInputType.number,
+                  textAlign: TextAlign.center,
+                  onChanged: (newText) {
+                    memberScore4 = newText;
+                  },
+                ),
+              ),
+            ]),
             FlatButton(
               child: Text(
                 'Add',
