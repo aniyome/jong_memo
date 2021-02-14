@@ -1,7 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:jong_memo/models/game.dart';
+import 'package:jong_memo/models/game_data.dart';
+import 'package:provider/provider.dart';
 
-class AddGameScreen extends StatelessWidget {
+class AddGameScreen extends StatefulWidget {
+  @override
+  _AddGameScreenState createState() => _AddGameScreenState();
+}
+
+class _AddGameScreenState extends State<AddGameScreen> {
   String title;
   String member1;
   String member2;
@@ -64,19 +72,28 @@ class AddGameScreen extends StatelessWidget {
                 member4 = newText;
               },
             ),
-            // FlatButton(
-            //   child: Text(
-            //     'Add',
-            //     style: TextStyle(
-            //       color: Colors.white,
-            //     ),
-            //   ),
-            //   color: Colors.lightBlueAccent,
-            //   onPressed: () {
-            //     Provider.of<TaskData>(context).addTask(newTaskTitle);
-            //     Navigator.pop(context);
-            //   },
-            // ),
+            FlatButton(
+              child: Text(
+                'Add',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              color: Colors.lightBlueAccent,
+              onPressed: () {
+                Provider.of<GameData>(context, listen: false).addGame(Game(
+                    title: "タイトル",
+                    member1: member1,
+                    member2: member2,
+                    member3: member3,
+                    member4: member4,
+                    memberScore1: 25000,
+                    memberScore2: 25000,
+                    memberScore3: 25000,
+                    memberScore4: 25000));
+                Navigator.pop(context);
+              },
+            ),
           ],
         ),
       ),
