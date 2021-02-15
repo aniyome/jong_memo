@@ -39,6 +39,11 @@ class GameData extends ChangeNotifier {
     notifyListeners();
   }
 
+  void editGame(int index, Game game) {
+    _games[index] = game;
+    notifyListeners();
+  }
+
   void deleteTask(int index) {
     _games.removeAt(index);
     notifyListeners();
