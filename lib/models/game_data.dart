@@ -26,8 +26,8 @@ class GameData extends ChangeNotifier {
         memberScore4: 22000),
   ];
 
-  UnmodifiableListView<Game> get games {
-    return UnmodifiableListView(_games);
+  List<Game> get games {
+    return _games;
   }
 
   int get gameCount {
@@ -39,8 +39,8 @@ class GameData extends ChangeNotifier {
     notifyListeners();
   }
 
-  void deleteTask(Game game) {
-    _games.remove(game);
+  void deleteTask(int index) {
+    _games.removeAt(index);
     notifyListeners();
   }
 }

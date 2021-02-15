@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:jong_memo/models/game_data.dart';
 import 'package:provider/provider.dart';
 
@@ -28,25 +29,43 @@ class GamesList extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Expanded(
-                            child: RaisedButton(
-                              child: const Text('編集'),
-                              color: Colors.orange,
-                              textColor: Colors.white,
-                              onPressed: () {},
-                            ),
+                          child: RaisedButton(
+                            child: const Text('編集'),
+                            color: Colors.orange,
+                            textColor: Colors.white,
+                            onPressed: () {},
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Expanded(
-                            child: RaisedButton(
+                          child: RaisedButton(
                               child: const Text('削除'),
                               color: Colors.redAccent,
                               textColor: Colors.white,
-                              onPressed: () {},
-                            ),
-                          ),
+                              onPressed: () {
+                                showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        title: Text("確認"),
+                                        content: Text("対局データを削除しますか？"),
+                                        actions: <Widget>[
+                                          FlatButton(
+                                            child: Text("CANCEL"),
+                                            onPressed: () =>
+                                                Navigator.pop(context),
+                                          ),
+                                          FlatButton(
+                                              child: Text("OK"),
+                                              onPressed: () {
+                                                gameData.deleteTask(index);
+                                                print(gameData);
+                                                Navigator.pop(context);
+                                              }),
+                                        ],
+                                      );
+                                    });
+                              }),
                         ),
                       ],
                     )

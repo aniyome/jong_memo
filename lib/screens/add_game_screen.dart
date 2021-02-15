@@ -10,15 +10,15 @@ class AddGameScreen extends StatefulWidget {
 }
 
 class _AddGameScreenState extends State<AddGameScreen> {
-  String title;
-  String member1;
-  String member2;
-  String member3;
-  String member4;
-  String memberScore1;
-  String memberScore2;
-  String memberScore3;
-  String memberScore4;
+  String title = "タイトル";
+  String member1 = "参加者1";
+  String member2 = "参加者2";
+  String member3 = "参加者3";
+  String member4 = "参加者4";
+  String memberScore1 = "25000";
+  String memberScore2 = "25000";
+  String memberScore3 = "25000";
+  String memberScore4 = "25000";
 
   @override
   Widget build(BuildContext context) {
