@@ -9,6 +9,19 @@ class RecordListScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text('じゃんメモ'),
         ),
+        floatingActionButton: FloatingActionButton(
+            backgroundColor: Colors.teal,
+            child: Icon(Icons.add),
+            onPressed: () {
+              showModalBottomSheet(
+                  context: context,
+                  isScrollControlled: true,
+                  builder: (context) => SingleChildScrollView(
+                          child: Container(
+                        padding: EdgeInsets.only(
+                            bottom: MediaQuery.of(context).viewInsets.bottom),
+                      )));
+            }),
         body: Container(
           child: Consumer<GameData>(
             builder: (context, gameData, child) {
