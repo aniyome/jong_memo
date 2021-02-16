@@ -31,7 +31,7 @@ class RecordListScreen extends StatelessWidget {
                   final game = gameData.games[index];
                   return Container(
                     padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                    height: 210,
+                    height: 220,
                     width: double.maxFinite,
                     child: Card(
                         elevation: 4.0,
