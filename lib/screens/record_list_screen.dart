@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jong_memo/models/game_data.dart';
+import 'package:jong_memo/screens/record_detail_screen.dart';
 import 'package:provider/provider.dart';
 
 class RecordListScreen extends StatelessWidget {
@@ -10,18 +11,18 @@ class RecordListScreen extends StatelessWidget {
           title: Text('じゃんメモ'),
         ),
         floatingActionButton: FloatingActionButton(
-            backgroundColor: Colors.teal,
-            child: Icon(Icons.add),
-            onPressed: () {
-              showModalBottomSheet(
-                  context: context,
-                  isScrollControlled: true,
-                  builder: (context) => SingleChildScrollView(
-                          child: Container(
-                        padding: EdgeInsets.only(
-                            bottom: MediaQuery.of(context).viewInsets.bottom),
-                      )));
-            }),
+          backgroundColor: Colors.teal,
+          child: Icon(Icons.add),
+          onPressed: () async {
+            await Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return RecordDetailScreen();
+                },
+              ),
+            );
+          },
+        ),
         body: Container(
           child: Consumer<GameData>(
             builder: (context, gameData, child) {
@@ -92,19 +93,14 @@ class RecordListScreen extends StatelessWidget {
                                       child: const Text('編集'),
                                       color: Colors.orange,
                                       textColor: Colors.white,
-                                      onPressed: () {
-                                        showModalBottomSheet(
-                                            context: context,
-                                            isScrollControlled: true,
-                                            builder: (context) =>
-                                                SingleChildScrollView(
-                                                    child: Container(
-                                                  padding: EdgeInsets.only(
-                                                      bottom:
-                                                          MediaQuery.of(context)
-                                                              .viewInsets
-                                                              .bottom),
-                                                )));
+                                      onPressed: () async {
+                                        await Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                            builder: (context) {
+                                              return RecordDetailScreen();
+                                            },
+                                          ),
+                                        );
                                       },
                                     ),
                                     RaisedButton(

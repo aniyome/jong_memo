@@ -3,6 +3,13 @@ import 'package:flutter/material.dart';
 class RecordDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Text("対局記録詳細画面");
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("記録表"),
+      ),
+      body: Container(
+        child: Center(child: Text("記録表")),
+      ),
+    );
   }
 }
