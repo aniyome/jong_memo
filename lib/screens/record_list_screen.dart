@@ -8,7 +8,7 @@ class RecordListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('じゃんメモ'),
+          title: Text('対局一覧'),
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.teal,
