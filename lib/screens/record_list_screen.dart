@@ -109,27 +109,28 @@ class RecordListScreen extends StatelessWidget {
                                       textColor: Colors.white,
                                       onPressed: () {
                                         showDialog(
-                                            context: context,
-                                            builder: (context) {
-                                              return AlertDialog(
-                                                title: Text("確認"),
-                                                content: Text("対局データを削除しますか？"),
-                                                actions: <Widget>[
-                                                  FlatButton(
-                                                    child: Text("CANCEL"),
-                                                    onPressed: () =>
-                                                        Navigator.pop(context),
-                                                  ),
-                                                  FlatButton(
-                                                      child: Text("OK"),
-                                                      onPressed: () {
-                                                        gameData
-                                                            .deleteTask(index);
-                                                        Navigator.pop(context);
-                                                      }),
-                                                ],
-                                              );
-                                            });
+                                          context: context,
+                                          builder: (context) {
+                                            return AlertDialog(
+                                              title: Text("確認"),
+                                              content: Text("対局データを削除しますか？"),
+                                              actions: <Widget>[
+                                                FlatButton(
+                                                  child: Text("CANCEL"),
+                                                  onPressed: () =>
+                                                      Navigator.pop(context),
+                                                ),
+                                                FlatButton(
+                                                    child: Text("OK"),
+                                                    onPressed: () {
+                                                      gameData
+                                                          .deleteTask(index);
+                                                      Navigator.pop(context);
+                                                    }),
+                                              ],
+                                            );
+                                          },
+                                        );
                                       },
                                     ),
                                   ],
